@@ -7,7 +7,7 @@ class Pengembalian(models.Model):
 
     name = fields.Char(string='Name')
 
-    sewa_id = fields.Many2one(comodel_name='mobil.sewa', string='No. Order')
+    sewa_id = fields.Many2one(comodel_name='mobil.sewa', string='No. Order',domain=[('sudah_kembali','!=',True)])
 
     tgl_pengembalian = fields.Date(string='Tanggal Pengembalian', default=fields.Date.today())
  
@@ -33,7 +33,7 @@ class Pengembalian(models.Model):
         if record.tgl_pengembalian:
             self.env['mobil.sewa'].search([('id','=',record.sewa_id.id)]).write({'sudah_kembali':True})
             self.env['mobil.list'].search([('id','=',record.sewa_id.mobil_ids.mobil_tipe_id.id)]).write({'sedang_disewa':False})
-            # self.env['wedding.akunting'].create({'kredit': record.tagihan,'name':record.name})
+            self.env['mobil.akunting'].create({'kredit': record.tagihan,'name':record.name})
             return record
     
     def unlink(self):

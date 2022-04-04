@@ -26,10 +26,10 @@
     </record>
 
     <!-- This Menu Item must have a parent and an action -->
-    <menuitem id="wedding_akunting_menu_act" 
+    <menuitem id="mobil_akunting_menu_act" 
     name="Akunting" 
-    parent="wedding_menu_root" 
-    action="wedding_akunting_action" 
+    parent="mobil_akunting_menu_categ" 
+    action="mobil_akunting_action" 
     sequence="40"/>
 
 </odoo>

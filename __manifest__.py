@@ -34,6 +34,7 @@
         'views/customer_view.xml',
         'views/pegawai_view.xml',
         'views/pengembalian_view.xml',
+        'views/akunting_view.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

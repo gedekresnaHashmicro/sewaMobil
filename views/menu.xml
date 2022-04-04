@@ -24,4 +24,10 @@
     parent="sewa_mobil_menu_root" 
     sequence="30"/>
 
+     <!-- This Menu Item Must have a parent -->
+    <menuitem id="mobil_akunting_menu_categ" 
+    name="Akunting" 
+    parent="sewa_mobil_menu_root" 
+    sequence="40"/>
+
 </odoo>
