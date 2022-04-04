@@ -21,6 +21,9 @@ class Mobil(models.Model):
     ], string='brand')
 
     sedang_disewa = fields.Boolean(string='Sedang Disewa',default=False)
+
+    img = fields.Binary(string='Image')
+    
     
     
     
