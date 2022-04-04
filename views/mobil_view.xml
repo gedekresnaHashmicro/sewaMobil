@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- mobil.list tree view -->
+    <record id="mobil_list_view_tree" model="ir.ui.view">
+        <field name="name">Daftar Mobil</field>
+        <field name="model">mobil.list</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="plat"/>
+                <field name="tipe"/>
+                <field name="transmisi"/>
+                <field name="harga"/>   
+                <field name="brand"/> 
+                <field name="sedang_disewa"/>          
+            </tree>
+        </field>
+    </record>
+
+    <!-- mobil.list form view -->
+    <record id="mobil_list_view_form" model="ir.ui.view">
+        <field name="name">Daftar Mobil</field>
+        <field name="model">mobil.list</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="plat"/>
+                        <field name="tipe"/>
+                        <field name="transmisi"/>
+                        <field name="harga"/>   
+                        <field name="brand"/>    
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- mobil.list action window -->
+    <record id="mobil_list_action" model="ir.actions.act_window">
+        <field name="name">Pilihan Mobil</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">mobil.list</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="mobil_list_menu_act" 
+    name="Pilihan Mobil" 
+    parent="mobil_list_menu_categ" 
+    action="mobil_list_action" 
+    sequence="10"/>
+
+</odoo>

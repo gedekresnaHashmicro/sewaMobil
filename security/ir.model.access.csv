@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_mobil_list,access.mobil.list,model_mobil_list,,1,1,1,1
+access_mobil_sewa,access.mobil.sewa,model_mobil_sewa,,1,1,1,1
+access_mobil_pengembalian,access.mobil.pengembalian,model_mobil_pengembalian,,1,1,1,1
+
+access_mobil_sewadetail,access.mobil.sewadetail,model_mobil_sewadetail,,1,1,1,1

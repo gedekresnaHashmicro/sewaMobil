@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- mobil.sewa tree view -->
+    <record id="model_name_view_tree" model="ir.ui.view">
+        <field name="name">Sewa mobil</field>
+        <field name="model">mobil.sewa</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <field name="pemesan"/> 
+                <field name="tgl_sewa"/> 
+                <field name="lama_sewa"/>
+                <field name="mobil_ids"/>
+                <field name="total"/> 
+            </tree>
+        </field>
+    </record>
+
+    <!-- mobil.sewa form view -->
+    <record id="model_name_view_form" model="ir.ui.view">
+        <field name="name">Sewa Mobil</field>
+        <field name="model">mobil.sewa</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="name"/>
+                        <field name="pemesan"/> 
+                        <field name="tgl_sewa"/>
+                        <field name="lama_sewa"/> 
+                        <!-- <field name="mobil_id"/>  -->
+                        <field name="total"/>
+                         <field name="mobil_ids">
+                            <tree editable="bottom">
+                                <field name="mobil_tipe_id"/>
+                                <field name="harga"/>
+                            </tree>
+                         </field>    
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- mobil.sewa action window -->
+    <record id="mobil_sewa_action" model="ir.actions.act_window">
+        <field name="name">Sewa mobil</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">mobil.sewa</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="mobil_sewa_menu_act" 
+    name="Sewa Mobil" 
+    parent="mobil_sewa_menu_categ" 
+    action="mobil_sewa_action" 
+    sequence="10"/>
+
+</odoo>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
