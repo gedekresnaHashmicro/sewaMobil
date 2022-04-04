@@ -31,7 +31,7 @@
                         <field name="name"/>
                         <field name="pemesan"/> 
                         <field name="tgl_sewa"/>
-                        <field name="lama_sewa"/> r
+                        <field name="lama_sewa"/> 
                         <field name="total"/>
                          <field name="mobil_ids">
                             <tree editable="bottom">
