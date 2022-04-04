@@ -13,10 +13,10 @@ class Pengembalian(models.Model):
  
     nama_penyewa = fields.Char(compute='_compute_nama_penyewa', string='nama_penyewa')
 
+
     @api.depends('sewa_id')
     def _compute_nama_penyewa(self):
         for record in self:
-            # record.nama_penyewa = self.env['wedding.order'].search(['id','=',record.order_id.id]).mapped('pemesan')
             record.nama_penyewa = record.sewa_id.pemesan.name
 
     
@@ -32,6 +32,7 @@ class Pengembalian(models.Model):
         record =  super(Pengembalian, self).create(values)
         if record.tgl_pengembalian:
             self.env['mobil.sewa'].search([('id','=',record.sewa_id.id)]).write({'sudah_kembali':True})
+            self.env['mobil.list'].search([('id','=',record.sewa_id.mobil_ids.mobil_tipe_id.id)]).write({'sedang_disewa':False})
             # self.env['wedding.akunting'].create({'kredit': record.tagihan,'name':record.name})
             return record
     
