@@ -32,6 +32,25 @@ class Sewa(models.Model):
             return record  
     
     sudah_kembali = fields.Boolean(string='Sudah Kembali', defaul=False)
+
+    def invoice(self):
+        invoices = self.env['account.move'].create({
+            'move_type': 'out_invoice',
+            'partner_id': self.pemesan,
+            'invoice_date': self.tgl_sewa,
+            'date': fields.Datetime.now(),
+            'invoice_line_ids': [(0,0,{
+                'product_id': 0,
+                'name': 'xxx',
+                'quantity': 1,
+                'name': 'product test 1',
+                'discount': 0,
+                'price_unit': self.total,
+                'price_subtotal': self.total,
+            })]
+        })
+        self.sudah_kembali=True
+        return invoices
     
   
 class SewaDetail(models.Model):
